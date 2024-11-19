@@ -14,7 +14,7 @@ function Cart() {
         const receipt_id = 'receipt_123456';
     
         // Create order by sending request to the backend
-        const response = await fetch('http://localhost:5000/order', {
+        const response = await fetch('http://localhost:5000/razorpay/order', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -43,7 +43,7 @@ function Cart() {
             alert("Payment successful! Payment ID: " + response.razorpay_payment_id);
         
             // Send data to server for validation
-            const validateResponse = await fetch('http://localhost:5000/validate', {
+            const validateResponse = await fetch('http://localhost:5000/razorpay/validate', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'
